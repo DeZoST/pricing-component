@@ -1,0 +1,258 @@
+:root {
+  /* Colors */
+  /* Primary */
+
+  --clr-linear-gradient: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+  /* Neutral */
+
+  --clr-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --clr-light-grayish-blue: hsl(234, 14%, 74%);
+  --clr-grayish-blue: hsl(233, 13%, 49%);
+  --clr-dark-grayish-blue: hsl(232, 13%, 33%);
+
+  /* sizes */
+  --size-xxs: 0.5rem;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
+  --size-xl: 1.25rem;
+  --size-2xl: 1.5rem;
+  --size-3xl: 1.875rem;
+  --size-4xl: 2.25rem;
+  --size-5xl: 3rem;
+  --size-6xl: 3.75rem;
+  --size-7xl: 4.5rem;
+  --size-8xl: 6rem;
+  --size-9xl: 8rem;
+  --size-10xl: 10rem;
+
+  /* Font sizes */
+  --fs-xxs: 0.5rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+  --fs-6xl: 3.75rem;
+  --fs-7xl: 4.5rem;
+  --fs-8xl: 6rem;
+  --fs-9xl: 8rem;
+  --fs-10xl: 10rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.75rem);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--fs-sm);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-very-light-grayish-blue);
+  color: var(--clr-dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__section{
+  margin-top: 4rem;
+}
+
+.header__title{
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--clr-grayish-blue);
+}
+
+.header__description-container{
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.description__text{
+  font-weight: 700;
+  color: var(--clr-light-grayish-blue);
+}
+
+.pricing__section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.pricing__card{
+  background-color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
+}
+
+.pricing__card:nth-child(2){
+  background: var(--clr-linear-gradient);
+  color: var(--clr-very-light-grayish-blue);
+}
+
+.pricing__card:nth-child(2) .pricing__card-button{
+  background: var(--clr-very-light-grayish-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing__card:nth-child(2) .pricing__card-button::before{
+  content: "LEARN MORE";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-linear-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
+  font-weight: 700;
+}
+
+.pricing__card:nth-child(2) .pricing__card-button span{
+  visibility: hidden;
+}
+
+.pricing__card-title{
+  font-size: var(--fs-base);
+  font-weight: 700;
+}
+
+.pricing__card-price{
+  font-size: var(--fs-5xl);
+  font-weight: 700;
+}
+
+.pricing__card-features-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pricing__card-feature{
+  font-weight: 700;
+}
+
+.pricing__card-line{
+  width: 90%;
+  height: 2px;
+  background-color: var(--clr-light-grayish-blue);
+}
+
+.pricing__card-button{
+  width: 90%;
+  background: var(--clr-linear-gradient);
+  margin-inline: auto;
+  color: var(--clr-very-light-grayish-blue);
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing__card-button span{
+  font-weight: 700;
+}
+
+.switch__checkbox {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.switch__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 100px;
+
+  position: relative;
+}
+
+.switch__label .switch__button {
+  content: "";
+  position: absolute;
+  top: 0.125rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch__checkbox:checked + .switch__label .switch__button {
+  left: calc(100% - 4px);
+  transform: translateX(-100%);
+}
