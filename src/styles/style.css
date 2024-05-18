@@ -2,7 +2,11 @@
   /* Colors */
   /* Primary */
 
-  --clr-linear-gradient: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --clr-linear-gradient: linear-gradient(
+    90deg,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
 
   /* Neutral */
 
@@ -71,7 +75,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 img,
@@ -104,30 +107,30 @@ a {
   color: inherit;
 }
 
-.header__section{
+.header__section {
   margin-top: 4rem;
 }
 
-.header__title{
+.header__title {
   font-size: var(--fs-2xl);
   font-weight: 700;
   text-align: center;
   color: var(--clr-grayish-blue);
 }
 
-.header__description-container{
+.header__description-container {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
   margin-top: 3rem;
 }
 
-.description__text{
+.description__text {
   font-weight: 700;
   color: var(--clr-light-grayish-blue);
 }
 
-.pricing__section{
+.pricing__section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,7 +138,7 @@ a {
   padding: 4rem 0;
 }
 
-.pricing__card{
+.pricing__card {
   background-color: #fff;
   padding: 2rem 1rem;
   border-radius: 8px;
@@ -147,66 +150,38 @@ a {
   box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
 }
 
-.pricing__card:nth-child(2){
-  background: var(--clr-linear-gradient);
-  color: var(--clr-very-light-grayish-blue);
+.pricing__card:nth-child(2) .pricing__card-button span {
+  display: none;
 }
 
-.pricing__card:nth-child(2) .pricing__card-button{
-  background: var(--clr-very-light-grayish-blue);
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing__card:nth-child(2) .pricing__card-button::before{
-  content: "LEARN MORE";
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--clr-linear-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  z-index: 1;
-  font-weight: 700;
-}
-
-.pricing__card:nth-child(2) .pricing__card-button span{
-  visibility: hidden;
-}
-
-.pricing__card-title{
+.pricing__card-title {
   font-size: var(--fs-base);
   font-weight: 700;
 }
 
-.pricing__card-price{
+.pricing__card-price {
   font-size: var(--fs-5xl);
   font-weight: 700;
 }
 
-.pricing__card-features-container{
+.pricing__card-features-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
 }
 
-.pricing__card-feature{
+.pricing__card-feature {
   font-weight: 700;
 }
 
-.pricing__card-line{
+.pricing__card-line {
   width: 90%;
   height: 2px;
   background-color: var(--clr-light-grayish-blue);
 }
 
-.pricing__card-button{
+.pricing__card-button {
   width: 90%;
   background: var(--clr-linear-gradient);
   margin-inline: auto;
@@ -216,9 +191,67 @@ a {
   padding: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
 }
 
-.pricing__card-button span{
+.pricing__card-button:hover::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 4px;
+  background-color: white;
+  z-index: -1;
+}
+.pricing__card-button:hover::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "LEARN MORE";
+  font-weight: 700;
+  background: var(--clr-linear-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.pricing__card-button:hover span {
+  display: none;
+}
+
+.pricing__card:nth-child(2) {
+  background: var(--clr-linear-gradient);
+  color: var(--clr-very-light-grayish-blue);
+}
+
+.pricing__card:nth-child(2) .pricing__card-button {
+  background: var(--clr-very-light-grayish-blue);
+}
+
+.pricing__card:nth-child(2) .pricing__card-button::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "LEARN MORE";
+  font-weight: 700;
+  background: var(--clr-linear-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms;
+}
+
+.pricing__card:nth-child(2) .pricing__card-button:hover::after {
+  background: var(--clr-very-light-grayish-blue);
+  -webkit-background-clip: text;
+}
+
+.pricing__card:nth-child(2) .pricing__card-button:hover::before {
+  background: var(--clr-linear-gradient);
+}
+
+.pricing__card-button span {
   font-weight: 700;
 }
 
